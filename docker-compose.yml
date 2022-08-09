@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  db_prreg:
+    image: postgres:11.4
+    hostname: db
+    restart: always
+    ports:
+      - 5432:5432
+    env_file: .env.development
+    networks:
+      - development
+
+networks:
+  development:
+    driver: bridge
