@@ -14,6 +14,14 @@ export class Serie {
   @Column()
   titulo: string;
 
+  @Column({
+    name: 'data_lancamento',
+  })
+  dataLancamento: Date;
+
+  @Column()
+  temporadas: number;
+
   @CreateDateColumn({
     name: 'created_at',
   })

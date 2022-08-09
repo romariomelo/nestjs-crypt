@@ -18,6 +18,14 @@ export class CreateSeriesTable1660047421142 implements MigrationInterface {
             type: 'varchar',
           },
           {
+            name: 'data_lancamento',
+            type: 'date',
+          },
+          {
+            name: 'temporadas',
+            type: 'smallint',
+          },
+          {
             name: 'created_at',
             type: 'timestamp',
             default: 'current_timestamp',
