@@ -16,10 +16,13 @@ export class Serie {
 
   @Column({
     name: 'data_lancamento',
+    type: 'varchar',
   })
   dataLancamento: Date;
 
-  @Column()
+  @Column({
+    type: 'varchar',
+  })
   temporadas: number;
 
   @CreateDateColumn({

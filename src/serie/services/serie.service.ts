@@ -7,10 +7,10 @@ export class SerieService {
   constructor(private readonly serieRepository: SerieRepository) {}
 
   async get() {
-    return this.serieRepository.find();
+    return this.serieRepository.findSerie();
   }
 
   async create(createSerieDto: CreateSerieDto) {
-    return this.serieRepository.save(createSerieDto);
+    return this.serieRepository.saveSerie(createSerieDto);
   }
 }
