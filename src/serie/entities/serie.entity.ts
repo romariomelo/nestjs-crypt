@@ -5,21 +5,36 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import {
+  DateEncryptionTransformer,
+  AppEncryptionTransformer,
+  NumberEncryptionTransformer,
+} from '../../utils/transformers';
 
 @Entity('serie')
 export class Serie {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
-  @Column()
+  @Column({
+    name: 'titulo',
+    type: 'varchar',
+    transformer: new AppEncryptionTransformer(),
+  })
   titulo: string;
 
   @Column({
     name: 'data_lancamento',
+    type: 'varchar',
+    transformer: new DateEncryptionTransformer(),
   })
   dataLancamento: Date;
 
-  @Column()
+  @Column({
+    name: 'temporadas',
+    type: 'varchar',
+    transformer: new NumberEncryptionTransformer(),
+  })
   temporadas: number;
 
   @CreateDateColumn({
