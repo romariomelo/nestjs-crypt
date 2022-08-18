@@ -1,6 +1,8 @@
 import { IsNotEmpty, IsNumber } from 'class-validator';
 
 export class CreateSerieDto {
+  // DTO poderá usar seus tipos adequados
+
   @IsNotEmpty({ message: 'titulo é obrigatório' })
   titulo: string;
 

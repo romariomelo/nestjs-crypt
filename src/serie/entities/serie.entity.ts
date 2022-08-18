@@ -13,27 +13,29 @@ import {
 
 @Entity('serie')
 export class Serie {
+  // Transformer adequado para cada tipo de dado
+  // e com configuração centralizada
   @PrimaryGeneratedColumn('increment')
   id: number;
 
   @Column({
     name: 'titulo',
     type: 'varchar',
-    transformer: new AppEncryptionTransformer(),
+    transformer: new AppEncryptionTransformer(), // Transformer adequado para cada tipo de dado
   })
   titulo: string;
 
   @Column({
     name: 'data_lancamento',
     type: 'varchar',
-    transformer: new DateEncryptionTransformer(),
+    transformer: new DateEncryptionTransformer(), // Transformer exclusivo para Date
   })
   dataLancamento: Date;
 
   @Column({
     name: 'temporadas',
     type: 'varchar',
-    transformer: new NumberEncryptionTransformer(),
+    transformer: new NumberEncryptionTransformer(), // Transformer exclusivo para number
   })
   temporadas: number;
 
