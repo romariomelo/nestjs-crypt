@@ -5,7 +5,7 @@ import { Serie } from '../entities/serie.entity';
 @EntityRepository(Serie)
 export class SerieRepository extends Repository<Serie> {
   // Para utilizar a criptografia no PostgreSQL sempre que houver consulta com
-  // dados criptografados é necessário usar o createQueryBuilder to typeorm
+  // dados criptografados é necessário usar o createQueryBuilder do typeorm
 
   // Para a criptografia feita no PostgreSQL, todo atributo que for criptografada
   // deve ser envolvida pela função encrypt do PostgreSQL para ser inserida.
