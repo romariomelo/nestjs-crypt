@@ -28,7 +28,8 @@ export class SerieRepository extends Repository<Serie> {
   // devem ser envolvida na função decrypt chamando a função addSelect
   async findSerie() {
     return this.createQueryBuilder('serie')
-      .select(
+      .select('id')
+      .addSelect(
         `convert_from(decrypt(concat('\\x', titulo)::bytea, '${process.env.ENCRYPTION_KEY}', 'aes'), 'UTF-8') as titulo`,
       )
       .addSelect(
