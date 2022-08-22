@@ -19,11 +19,11 @@ export class CreateSeriesTable1660047421142 implements MigrationInterface {
           },
           {
             name: 'data_lancamento',
-            type: 'date',
+            type: 'varchar',
           },
           {
             name: 'temporadas',
-            type: 'smallint',
+            type: 'varchar',
           },
           {
             name: 'created_at',
